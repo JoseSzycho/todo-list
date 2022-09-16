@@ -1,3 +1,130 @@
-span{
-    background-color: red;
+@font-face {
+    font-family: Righteous-Regular;
+    src: url('/fonts/Righteous-Regular.ttf');
 }
+
+@font-face {
+    font-family: Roboto-Regular;
+    src: url('/fonts/Roboto-Regular.ttf');
+}
+
+html{
+    font-family: Roboto-Regular;
+    font-weight: 580;
+    color: #252930;
+    font-size: 1rem; /*Used for controlling all sizes*/
+}
+
+body{
+    display: grid;
+    grid-template-columns: minmax(200px,2fr) 6fr;
+    grid-template-areas: 
+    "header header"
+    "nav main";
+}
+
+h1, h2, h3{
+    font-family: Righteous-Regular;
+}
+
+h1{
+    font-size: 2.4rem; 
+    color: #CED3DC;
+}
+
+h2{
+    font-size: 3rem;
+    padding: 1rem 0;
+}
+
+h3{
+    font-size: 1.5rem;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+header{
+    background-color: #A31621;
+    grid-area: header;
+    padding: 1rem;
+    padding-left: 6rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+main{
+    padding: 1rem 8rem;
+    background-color: #EEEEF0;
+    grid-area: main;
+}
+
+nav{
+    background-color: #ced3dd;
+    grid-area: nav;
+    padding: 1rem 3rem;
+}
+
+li, p{
+    font-size: 1.3rem;
+}
+
+li{
+    list-style: none;
+    padding: 0.4rem;
+    margin: 0.4rem;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+img{
+    height: 1.6rem;
+}
+
+.header-icon{
+    height: 4rem;
+}
+
+.unchecked-box::before{
+    background:url('icons/uncheckedBox.svg');
+}
+
+.checked-box::before{
+    background:url('icons/checkedBox.svg');
+}
+
+.edit-task::before{
+    background:url('icons/editIcon.svg');
+}
+
+.delete-task::before{
+    background:url('icons/deleteIcon.svg');
+}
+
+.task-title{
+    flex: 1;
+}
+
+.task-date{
+    margin-right: 2rem;
+    font-size: 1rem;
+}
+
+.unchecked-box::before, .checked-box::before,
+.edit-task::before, .delete-task::before{
+    content: '';
+    height: 25px;
+    width: 25px;
+    background-size: 25px 25px; 
+    background-repeat: no-repeat;
+    display: block;
+}
+
+.task{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin: 0.7rem 0;
+}
+
