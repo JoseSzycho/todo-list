@@ -8,7 +8,7 @@
     src: url('/fonts/Roboto-Regular.ttf');
 }
 
-html{
+html, textarea, input, option, select{
     font-family: Roboto-Regular;
     font-weight: 580;
     color: #252930;
@@ -65,8 +65,12 @@ nav{
     padding: 1rem 3rem;
 }
 
-li, p{
+li, p, fieldset, input, textarea, option, select{
     font-size: 1.3rem;
+}
+
+li:hover{
+    cursor: grab;
 }
 
 li{
@@ -78,6 +82,10 @@ li{
     gap: 0.8rem;
 }
 
+legend{
+    font-size: 1.6rem;
+    font-family: Righteous-Regular;
+}
 img{
     height: 1.6rem;
 }
@@ -102,6 +110,29 @@ img{
     background:url('icons/deleteIcon.svg');
 }
 
+.high-priority{
+    border-left: #A31621 solid 0.3rem;
+}
+
+.medium-priority{
+    border-left: #3c16a3 solid 0.3rem;
+}
+
+.low-priority{
+    border-left: #5aa316 solid 0.3rem;
+}
+
+.task:hover, #new-task:hover{
+    background-color:  #ced3dd52;
+    border-radius: 1rem;
+    height: 3rem;
+    cursor: grab;
+    font-weight: 600;
+    position: relative;
+    left: 0.5rem;
+    box-shadow: 2px 2px 2px black;
+}
+
 .task-title{
     flex: 1;
 }
@@ -121,10 +152,80 @@ img{
     display: block;
 }
 
-.task{
+.task, button{
     display: flex;
     align-items: center;
     gap: 1rem;
-    margin: 0.7rem 0;
+    margin: 0.7rem 1.5rem;
+    padding: 0 0.8rem;
 }
 
+#add-task-button{
+    border: none;
+}
+
+#new-task{
+    border-left: #5aa31600 solid 0.3rem;
+}
+
+fieldset{
+    background-color: #ced3dd52;
+    border-radius: 0.4rem;
+    padding: 1rem 2rem;
+    border: #252930 solid  2px;
+    display: grid;
+    gap: 1rem 3rem;
+    grid-template-columns: 2.5fr 1fr;
+    grid-template-areas: 
+    "task-title task-due-date"
+    "task-description task-priority"
+    "task-description submit-buttons";
+}
+
+form:hover{
+
+}
+
+.title{
+    grid-area: task-title;
+}
+
+.due-date{
+    grid-area: task-due-date;
+}
+
+.priority{
+    grid-area: task-priority;
+}
+
+.description{
+    grid-area: task-description;
+}
+
+.submit-buttons{
+    grid-area: submit-buttons;
+}
+
+.submit-buttons, .due-date, .description, .title, .priority{
+    gap: 0.3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    font-family: Righteous-Regular;
+}
+
+.submit-buttons>input{
+    font-family: Righteous-Regular;
+    border-radius: 0.4rem;
+}
+
+input[type=submit]{
+    background-color: #00ff37;
+}
+input[type=button]{
+    background-color: #1e1c2562;
+}
+
+form{
+    width: 100%;
+}

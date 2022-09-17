@@ -14,36 +14,73 @@
     </header>
     <nav>
         <li><img src="/icons/inboxIcon.svg" alt="inboxIcon">Inbox</li>
-        <li><img src="/icons/todayIcon.svg" alt="inboxIcon">Today</li>
-        <li><img src="/icons/thisWeekIcon.svg" alt="inboxIcon">This week</li>
+        <li><img src="/icons/todayIcon.svg" alt="todayIcon">Today</li>
+        <li><img src="/icons/thisWeekIcon.svg" alt="thisWeekIcon">This week</li>
         <h3>Projects</h2>
         <li>Add project</li>
     </nav>
     <main>
         <h2>Inbox</h2>
-        <div class="task">
-            <div type="task-box" class="unchecked-box"></div>
+        <div class="high-priority task">
+            <div type="checkbox" class="unchecked-box"></div>
             <p class="task-title">This is the text of the task</p>
             <p class="task-date">Nov 13th</p>
             <div class="edit-task"></div>
             <div class="delete-task"></div>
         </div>
 
-        <div class="task">
-            <div type="task-box" class="unchecked-box"></div>
+        <div class="medium-priority task">
+            <div class="unchecked-box"></div>
             <p class="task-title">This is the text of the task</p>
             <p class="task-date">Nov 13th</p>
             <div class="edit-task"></div>
             <div class="delete-task"></div>
         </div>
 
-        <div class="task">
-            <div type="task-box" class="unchecked-box"></div>
+        <div class="low-priority task">
+            <div class="checked-box"></div>
             <p class="task-title">This is the text of the task</p>
             <p class="task-date">Nov 13th</p>
             <div class="edit-task"></div>
             <div class="delete-task"></div>
         </div>
+        
+        <div id="new-task" class="task"><img src="/icons/addTaskIcon.svg" alt="add-task-icon"><p>Add task</p></div>
+
+        
+        <form>
+            <fieldset>
+                <legend>Task details</legend>
+                <div class="title">
+                    <label for="title">Title</label>
+                <input type="text" id="title">
+                </div>
+                <div class="description">
+                    <label for="description">Description</label>
+                    <textarea id="description" name="description" rows="5"></textarea>
+                </div>
+                <div class="due-date">
+                    <label for="due-date">Due date</label>
+                    <input type="date" id="due-date">
+                </div>
+                
+                <div class="priority">
+                    <label>Priority</label>
+                    <select name="priority">
+                        <option value="high">High</option>
+                        <option value="medium">Medium</option>
+                        <option value="low" selected>Low</option>
+                    </select>
+                </div>
+
+                <div class="submit-buttons">
+                    <input type="submit">   
+                    <input type="button" value="Cancel">
+                </div>
+            </fieldset>
+        </form>
     </main>
+    
+    <script src="script.js"></script>
 </body>
 </html>
