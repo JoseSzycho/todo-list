@@ -1,11 +1,11 @@
 @font-face {
     font-family: Righteous-Regular;
-    src: url('/fonts/Righteous-Regular.ttf');
+    src: url('fonts/Righteous-Regular.ttf');
 }
 
 @font-face {
     font-family: Roboto-Regular;
-    src: url('/fonts/Roboto-Regular.ttf');
+    src: url('fonts/Roboto-Regular.ttf');
 }
 
 html, textarea, input, option, select{
