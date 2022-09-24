@@ -229,3 +229,8 @@ input[type=button]{
 form{
     width: 100%;
 }
+
+.hide{
+    visibility: hidden;
+    position: absolute;
+}
