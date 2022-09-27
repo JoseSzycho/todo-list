@@ -16,7 +16,14 @@ String.prototype.hashCode = function() {
   return hash;
 }
 
+//Adds new task event listener
 const newTaskButton = document.getElementById("new-task");
 newTaskButton.addEventListener("click", () => DOM.openForm());
 
+//Adds new project event listener
+const newProjectButton = document.getElementById("new-project")
+newProjectButton.addEventListener("click", () => DOM.addProject());
 
+
+DOM.showAllTasks();
+DOM.loadProjects();

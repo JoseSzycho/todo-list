@@ -122,7 +122,7 @@ img{
     border-left: #5aa316 solid 0.3rem;
 }
 
-.task:hover, #new-task:hover{
+li:hover, .task:hover, #new-task:hover{
     background-color:  #ced3dd52;
     border-radius: 1rem;
     height: 3rem;
@@ -182,9 +182,6 @@ fieldset{
     "task-description submit-buttons";
 }
 
-form:hover{
-
-}
 
 .title{
     grid-area: task-title;
@@ -221,9 +218,11 @@ form:hover{
 
 input[type=submit]{
     background-color: #00ff37;
+    font-family: Righteous-Regular;
 }
-input[type=button]{
+input[type=reset]{
     background-color: #1e1c2562;
+    font-family: Righteous-Regular;
 }
 
 form{
@@ -234,3 +233,15 @@ form{
     visibility: hidden;
     position: absolute;
 }
+
+.project-form{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+#project-buttons{
+    display: flex;
+    gap: 0.5rem;
+}
+
