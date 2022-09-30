@@ -1,0 +1,247 @@
+@font-face {
+    font-family: Righteous-Regular;
+    src: url('./fonts/Righteous-Regular.ttf');
+}
+
+@font-face {
+    font-family: Roboto-Regular;
+    src: url('./fonts/Roboto-Regular.ttf');
+}
+
+html, textarea, input, option, select{
+    font-family: Roboto-Regular;
+    font-weight: 580;
+    color: #252930;
+    font-size: 1rem; /*Used for controlling all sizes*/
+}
+
+body{
+    display: grid;
+    grid-template-columns: minmax(200px,2fr) 6fr;
+    grid-template-areas: 
+    "header header"
+    "nav main";
+}
+
+h1, h2, h3{
+    font-family: Righteous-Regular;
+}
+
+h1{
+    font-size: 2.4rem; 
+    color: #CED3DC;
+}
+
+h2{
+    font-size: 3rem;
+    padding: 1rem 0;
+}
+
+h3{
+    font-size: 1.5rem;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+header{
+    background-color: #A31621;
+    grid-area: header;
+    padding: 1rem;
+    padding-left: 6rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+main{
+    padding: 1rem 8rem;
+    background-color: #EEEEF0;
+    grid-area: main;
+}
+
+nav{
+    background-color: #ced3dd;
+    grid-area: nav;
+    padding: 1rem 3rem;
+}
+
+li, p, fieldset, input, textarea, option, select{
+    font-size: 1.3rem;
+}
+
+li:hover{
+    cursor: grab;
+}
+
+li{
+    list-style: none;
+    padding: 0.4rem;
+    margin: 0.4rem;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+legend{
+    font-size: 1.6rem;
+    font-family: Righteous-Regular;
+}
+img{
+    height: 1.6rem;
+}
+
+.header-icon{
+    height: 4rem;
+}
+
+.unchecked-box::before{
+    background:url('icons/uncheckedBox.svg');
+}
+
+.checked-box::before{
+    background:url('icons/checkedBox.svg');
+}
+
+.edit-task::before{
+    background:url('icons/editIcon.svg');
+}
+
+.delete-task::before{
+    background:url('icons/deleteIcon.svg');
+}
+
+.high-priority{
+    border-left: #A31621 solid 0.3rem;
+}
+
+.medium-priority{
+    border-left: #3c16a3 solid 0.3rem;
+}
+
+.low-priority{
+    border-left: #5aa316 solid 0.3rem;
+}
+
+li:hover, .task:hover, #new-task:hover{
+    background-color:  #ced3dd52;
+    border-radius: 1rem;
+    height: 3rem;
+    cursor: grab;
+    font-weight: 600;
+    position: relative;
+    left: 0.5rem;
+    box-shadow: 2px 2px 2px black;
+}
+
+.task-title{
+    flex: 1;
+}
+
+.task-date{
+    margin-right: 2rem;
+    font-size: 1rem;
+}
+
+.unchecked-box::before, .checked-box::before,
+.edit-task::before, .delete-task::before{
+    content: '';
+    height: 25px;
+    width: 25px;
+    background-size: 25px 25px; 
+    background-repeat: no-repeat;
+    display: block;
+}
+
+.task, button{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin: 0.7rem 1.5rem;
+    padding: 0 0.8rem;
+}
+
+#add-task-button{
+    border: none;
+}
+
+#new-task{
+    border-left: #5aa31600 solid 0.3rem;
+}
+
+fieldset{
+    background-color: #ced3dd52;
+    border-radius: 0.4rem;
+    padding: 1rem 2rem;
+    border: #252930 solid  2px;
+    display: grid;
+    gap: 1rem 3rem;
+    grid-template-columns: 2.5fr 1fr;
+    grid-template-areas: 
+    "task-title task-due-date"
+    "task-description task-priority"
+    "task-description submit-buttons";
+}
+
+
+.title{
+    grid-area: task-title;
+}
+
+.due-date{
+    grid-area: task-due-date;
+}
+
+.priority{
+    grid-area: task-priority;
+}
+
+.description{
+    grid-area: task-description;
+}
+
+.submit-buttons{
+    grid-area: submit-buttons;
+}
+
+.submit-buttons, .due-date, .description, .title, .priority{
+    gap: 0.3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    font-family: Righteous-Regular;
+}
+
+.submit-buttons>input{
+    font-family: Righteous-Regular;
+    border-radius: 0.4rem;
+}
+
+input[type=submit]{
+    background-color: #00ff37;
+    font-family: Righteous-Regular;
+}
+input[type=reset]{
+    background-color: #1e1c2562;
+    font-family: Righteous-Regular;
+}
+
+form{
+    width: 100%;
+}
+
+.hide{
+    visibility: hidden;
+    position: absolute;
+}
+
+.project-form{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+#project-buttons{
+    display: flex;
+    gap: 0.5rem;
+}
+
