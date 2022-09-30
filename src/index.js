@@ -1,7 +1,7 @@
 //imports
 import { Task } from "./Task.js"
 import { DOM } from "./DOM.js"
-
+import {format, parse} from 'date-fns';
 
 //Adds hash prototype to create unique IDs for task
 String.prototype.hashCode = function() {
@@ -24,6 +24,12 @@ newTaskButton.addEventListener("click", () => DOM.openForm());
 const newProjectButton = document.getElementById("new-project")
 newProjectButton.addEventListener("click", () => DOM.addProject());
 
+//Add default project pages event listeners
+document.getElementById("inboxTasks").addEventListener("click", () => DOM.createProjectPage("Inbox"))
+document.getElementById("todayTasks").addEventListener("click", () => DOM.createProjectPage("Today"))
 
-DOM.showAllTasks();
+
+console.log(document.getElementById("inboxTasks"))
+
+DOM.showAllTasks("Inbox");
 DOM.loadProjects();
