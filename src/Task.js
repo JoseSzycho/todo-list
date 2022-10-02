@@ -23,7 +23,6 @@ class Task{
         dueDay = format(dueDay, 'dd MMM yyyy');
         console.log(dueDay)
         const dueDate =  dueDay || "No date";
-//parse(dueDay.replace("-",".").replace("-",".").replace("-","."), "yyyy.MM.dd", new Date())
         const priority = document.getElementById("priority").value;
 
         //add validation logic.. pendent to do this  
@@ -121,6 +120,10 @@ class Task{
     }
 
     static getTodayKeys(keys){
+        const task = Objetct.keys(localStorage);
+       
+
+
         return keys;
     }
     
