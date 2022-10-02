@@ -16,7 +16,7 @@ String.prototype.hashCode = function() {
   return hash;
 }
 
-//Adds new task event listener
+//Adds new task event listener hello
 const newTaskButton = document.getElementById("new-task");
 newTaskButton.addEventListener("click", () => DOM.openForm());
 
